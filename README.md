@@ -4,8 +4,8 @@ Automatically apply WooCommerce coupon codes to the cart via a url.
 
 __Contributors:__ [Luke McDonald](https://github.com/thelukemcdonald)  
 __Requires:__ 3.5  
-__Tested up to:__ 3.6.1
-__License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)
+__Tested up to:__ 3.6.1  
+__License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 ## Usage
 
@@ -19,7 +19,7 @@ Probably more useful than just applying a coupon code to the URL, is appending t
 
 `http://audiotheme.com/view/americanaura/?add-to-cart=192&coupon_code=easteregg5`
 
-In the above example, a product with the id of 192 will be added to the cart and the `easteregg5` coupon code applied. This method can be useful when advertising
+In the above example, a product with the id of `192` will be added to the cart and the `easteregg5` coupon code applied.
 
 ## Credits
 
