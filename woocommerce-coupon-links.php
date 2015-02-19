@@ -31,4 +31,4 @@ function woocommerce_coupon_links() {
 	$woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ) );
 }
 
-add_action( 'init', 'woocommerce_coupon_links' );
+add_action( 'woocommerce_cart_loaded_from_session', 'woocommerce_coupon_links' );
