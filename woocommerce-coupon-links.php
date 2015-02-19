@@ -10,6 +10,7 @@
  * @license   GPL-2.0+
  *
  * @wordpress-plugin
+ * Plugin Name: WooCommerce Coupon Links
  * Plugin URI: https://github.com/cedaro/woocommerce-coupon-links
  * Description: Automatically apply a WooCommerce coupon code to the cart with a url.
  * Version: 2.0.0
