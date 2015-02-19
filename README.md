@@ -17,9 +17,9 @@ If the cart is empty, the coupon code will still be applied and visible once the
 
 Probably more useful than just applying a coupon code to the URL, is appending the coupon code argument to the end of a product's add-to-cart URL.
 
-`https://audiotheme.com/view/promenade/?add-to-cart=280&coupon_code=highfive`
+`https://audiotheme.com/view/promenade/?add-to-cart=2804&coupon_code=highfive`
 
-In the above example, a product with the id of `280` will be added to the cart with the `highfive` coupon applied.
+In the above example, a product with the id of `2804` will be added to the cart with the `highfive` coupon applied.
 
 ## Installation ##
 
