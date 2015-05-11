@@ -48,4 +48,4 @@ function cedaro_woocommerce_coupon_links() {
 	// Apply the coupon code to the cart.
 	$woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ) );
 }
-add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30);
+add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );

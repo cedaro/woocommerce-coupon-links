@@ -1,26 +1,26 @@
 {
-	"name": "cedaro/woocommerce-coupon-links",
-	"description": "A WordPress plugin to automatically apply a WooCommerce coupon code to the cart with a URL.",
-	"keywords": ["wordpress"],
-	"type": "wordpress-plugin",
-	"homepage": "https://github.com/cedaro/woocommerce-coupon-links",
-	"license": "GPL-2.0+",
-	"authors": [
-		{
-			"name": "Luke McDonald",
-			"homepage": "http://www.cedaro.com/"
-		},
-		{
-			"name": "Brady Vercher",
-			"email": "brady@blazersix.com",
-			"homepage": "http://www.cedaro.com/"
-		}
-	],
-	"support": {
-		"issues": "https://github.com/cedaro/woocommerce-coupon-links/issues",
-		"source": "https://github.com/cedaro/woocommerce-coupon-links"
-	},
-	"require": {
-		"composer/installers": "~1.0"
-	}
+  "name": "cedaro/woocommerce-coupon-links",
+  "description": "A WordPress plugin to automatically apply a WooCommerce coupon code to the cart with a URL.",
+  "keywords": ["wordpress"],
+  "type": "wordpress-plugin",
+  "homepage": "https://github.com/cedaro/woocommerce-coupon-links",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Luke McDonald",
+      "homepage": "http://www.cedaro.com/"
+    },
+    {
+      "name": "Brady Vercher",
+      "email": "brady@blazersix.com",
+      "homepage": "http://www.cedaro.com/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/cedaro/woocommerce-coupon-links/issues",
+    "source": "https://github.com/cedaro/woocommerce-coupon-links"
+  },
+  "require": {
+    "composer/installers": "~1.0"
+  }
 }
