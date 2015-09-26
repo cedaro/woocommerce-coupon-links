@@ -44,7 +44,7 @@ function cedaro_woocommerce_coupon_links() {
 	if ( empty( $coupon_code ) || in_array( $coupon_code, $woocommerce->cart->applied_coupons ) ) {
 		return;
 	}
-
+        $woocommerce->session->set_customer_session_cookie(true);
 	// Apply the coupon code to the cart.
 	$woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ) );
 }
