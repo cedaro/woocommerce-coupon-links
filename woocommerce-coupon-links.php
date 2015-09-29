@@ -32,7 +32,13 @@ function cedaro_woocommerce_coupon_links() {
 		return;
 	}
 
-	// Get coupon query variable name.
+	/**
+	 * Filter the coupon code query variable name.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $query_var Query variable name.
+	 */
 	$query_var = apply_filters( 'woocommerce_coupon_links_query_var', 'coupon_code' );
 
 	// Bail if a coupon code isn't in the query string.
