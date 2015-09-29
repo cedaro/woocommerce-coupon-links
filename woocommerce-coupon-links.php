@@ -27,10 +27,8 @@
  * @since 1.0.0
  */
 function cedaro_woocommerce_coupon_links() {
-	global $woocommerce;
-
-	// Bail early if $woocommerce is empty or coupons are not enabled in WooCommerce.
-	if ( empty( $woocommerce ) ) {
+	// Bail early if WooCommerce isn't available.
+	if ( ! function_exists( 'WC' ) ) {
 		return;
 	}
 
@@ -41,12 +39,12 @@ function cedaro_woocommerce_coupon_links() {
 	$coupon_code = isset( $_GET[ $query_var ] ) ? $_GET[ $query_var ] : '';
 
 	// Bail early if coupon code has not been set or has already been applied.
-	if ( empty( $coupon_code ) || in_array( $coupon_code, $woocommerce->cart->applied_coupons ) ) {
+	if ( empty( $coupon_code ) || in_array( $coupon_code, WC()->cart->applied_coupons ) ) {
 		return;
 	}
 
 	// Apply the coupon code to the cart.
-	$woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ) );
+	WC()->cart->add_discount( sanitize_text_field( $coupon_code ) );
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
 add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
