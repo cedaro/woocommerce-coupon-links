@@ -35,16 +35,14 @@ function cedaro_woocommerce_coupon_links() {
 	// Get coupon query variable name.
 	$query_var = apply_filters( 'woocommerce_coupon_links_query_var', 'coupon_code' );
 
-	// Get the coupon code.
-	$coupon_code = isset( $_GET[ $query_var ] ) ? $_GET[ $query_var ] : '';
-
-	// Bail early if coupon code has not been set or has already been applied.
-	if ( empty( $coupon_code ) || in_array( $coupon_code, WC()->cart->applied_coupons ) ) {
+	// Bail if a coupon code isn't in the query string.
+	if ( empty( $_GET[ $query_var ] ) ) {
 		return;
 	}
 
-	// Apply the coupon code to the cart.
-	WC()->cart->add_discount( sanitize_text_field( $coupon_code ) );
+	// Apply the coupon to the cart.
+	// WC_Cart::add_discount() sanitizes the coupon code.
+	WC()->cart->add_discount( $_GET[ $query_var ] );
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
 add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
