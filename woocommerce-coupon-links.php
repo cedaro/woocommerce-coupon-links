@@ -27,8 +27,8 @@
  * @since 1.0.0
  */
 function cedaro_woocommerce_coupon_links() {
-	// Bail early if WooCommerce isn't available.
-	if ( ! function_exists( 'WC' ) ) {
+	// Bail if WooCommerce or sessions aren't available.
+	if ( ! function_exists( 'WC' ) || ! WC()->session ) {
 		return;
 	}
 
@@ -45,6 +45,9 @@ function cedaro_woocommerce_coupon_links() {
 	if ( empty( $_GET[ $query_var ] ) ) {
 		return;
 	}
+
+	// Set a session cookie to persist the coupon in case the cart is empty.
+	WC()->session->set_customer_session_cookie( true );
 
 	// Apply the coupon to the cart.
 	// WC_Cart::add_discount() sanitizes the coupon code.
