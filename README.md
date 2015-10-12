@@ -4,7 +4,7 @@ Automatically apply WooCommerce coupon codes to the cart via a URL.
 
 __Contributors:__ [Luke McDonald](https://github.com/thelukemcdonald), [Brady Vercher](https://twitter.com/bradyvercher)  
 __Requires:__ 4.0  
-__Tested up to:__ 4.2  
+__Tested up to:__ 4.3  
 __License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 ## Usage
