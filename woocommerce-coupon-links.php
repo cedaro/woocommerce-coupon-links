@@ -49,9 +49,11 @@ function cedaro_woocommerce_coupon_links() {
 	// Set a session cookie to persist the coupon in case the cart is empty.
 	WC()->session->set_customer_session_cookie( true );
 
-	// Apply the coupon to the cart.
-	// WC_Cart::add_discount() sanitizes the coupon code.
-	WC()->cart->add_discount( $_GET[ $query_var ] );
+	// Apply the coupon to the cart if necessary.
+	if ( ! WC()->cart->has_discount( $_GET[ $query_var ] ) ) {
+		// WC_Cart::add_discount() sanitizes the coupon code.
+		WC()->cart->add_discount( $_GET[ $query_var ] );
+	}
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
 add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
