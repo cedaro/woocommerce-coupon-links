@@ -51,7 +51,9 @@ function cedaro_woocommerce_coupon_links() {
 
 	// Apply the coupon to the cart.
 	// WC_Cart::add_discount() sanitizes the coupon code.
-	WC()->cart->add_discount( $_GET[ $query_var ] );
+	if ( ! WC()->cart->has_discount( $_GET[ $query_var ] ) ) {
+		WC()->cart->add_discount( $_GET[ $query_var ] );
+	}
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
 add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
