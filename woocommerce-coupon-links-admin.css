@@ -1,0 +1,12 @@
+#coupon-url-label {
+	float: left;
+	width: 150px;
+	padding: 0;
+	margin: 0 0 0 -150px;
+	cursor: pointer;
+}
+
+#coupon-url {
+	font-size: 13px;
+	cursor: pointer;
+}
