@@ -36,7 +36,7 @@ class Cedaro_WP_Plugin_Tests_Bootstrap {
 		];
 
 		foreach ( $directories as $directory ) {
-			if ( $directory && file_exists( $directory ) ) {
+			if ( ! empty( $directory ) && file_exists( $directory ) ) {
 				return $directory;
 			}
 		}
