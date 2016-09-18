@@ -2,19 +2,19 @@
 
 namespace Cedaro\WooCommerce\CouponLinks\Test\Integration;
 
-use Cedaro\WooCommerce\CouponLinks\Test\Framework\Helper\CouponHelper;
-use Cedaro\WooCommerce\CouponLinks\Test\Framework\Helper\ProductHelper;
+use Cedaro\WooCommerce\CouponLinks\Test\Framework\MockSession;
+use WC_Helper_Coupon;
+use WC_Helper_Product;
 
 class CouponTest extends \WP_UnitTestCase {
 	protected $coupon;
-	protected $session_class = '\Cedaro\WooCommerce\CouponLinks\Test\Framework\MockSession';
 
 	public function setUp() {
 		parent::setUp();
 
-		$this->coupon = CouponHelper::create_coupon();
+		$this->coupon = WC_Helper_Coupon::create_coupon();
 
-		WC()->session = new $this->session_class;
+		WC()->session = new MockSession();
 	}
 
 	public function test_add_coupon() {
@@ -26,7 +26,7 @@ class CouponTest extends \WP_UnitTestCase {
 	}
 
 	public function test_add_coupon_after_product() {
-		$product = ProductHelper::create_simple_product();
+		$product = WC_Helper_Product::create_simple_product();
 		$this->go_to( home_url( '/?coupon_code=dummycoupon' ) );
 
 		WC()->cart->add_to_cart( $product->id, 1 );
@@ -36,7 +36,7 @@ class CouponTest extends \WP_UnitTestCase {
 	}
 
 	public function test_add_coupon_before_product() {
-		$product = ProductHelper::create_simple_product();
+		$product = WC_Helper_Product::create_simple_product();
 		$this->go_to( home_url( '/?coupon_code=dummycoupon' ) );
 
 		cedaro_woocommerce_coupon_links();
