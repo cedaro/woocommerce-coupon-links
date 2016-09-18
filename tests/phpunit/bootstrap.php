@@ -53,7 +53,13 @@ function _load_wordpress_tests( $tests_directory ) {
 	require_once $tests_directory . '/includes/functions.php';
 
 	tests_add_filter( 'muplugins_loaded', function() {
-		require( dirname( dirname( dirname( __DIR__ ) ) ) . '/woocommerce/woocommerce.php' );
+		$woocommerce_plugin_file = dirname( dirname( dirname( __DIR__ ) ) ) . '/woocommerce/woocommerce.php';
+		if ( file_exists( $woocommerce_plugin_file ) ) {
+			require( $woocommerce_plugin_file );
+		} elseif ( file_exists( '/tmp/woocommerce/woocommerce.php' ) ) {
+			require( '/tmp/woocommerce/woocommerce.php' );
+		}
+
 		require( dirname( dirname( __DIR__ ) ) . '/woocommerce-coupon-links.php' );
 	} );
 
