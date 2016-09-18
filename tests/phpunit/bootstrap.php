@@ -28,15 +28,17 @@ class Cedaro_WP_Plugin_Tests_Bootstrap {
 	}
 
 	public function locate_wordpress_tests() {
-		$directories = [
-			getenv( 'WP_TESTS_DIR' ),
-			getenv( 'WP_DEVELOP_DIR' ) . 'tests/phpunit',
-			'../../../../../tests/phpunit',
-			'/tmp/wordpress-tests-lib',
-		];
+		$directories = [ getenv( 'WP_TESTS_DIR' ) ];
+
+		if ( false !== getenv( 'WP_DEVELOP_DIR' ) ) {
+			$directories[] = getenv( 'WP_DEVELOP_DIR' ) . 'tests/phpunit';
+		}
+
+		$directories[] = '../../../../../tests/phpunit';
+		$directories[] = '/tmp/wordpress-tests-lib';
 
 		foreach ( $directories as $directory ) {
-			if ( ! empty( $directory ) && file_exists( $directory ) ) {
+			if ( $directory && file_exists( $directory ) ) {
 				return $directory;
 			}
 		}
