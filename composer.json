@@ -8,12 +8,12 @@
   "authors": [
     {
       "name": "Luke McDonald",
-      "homepage": "http://www.cedaro.com/"
+      "homepage": "https://www.cedaro.com/"
     },
     {
       "name": "Brady Vercher",
       "email": "brady@blazersix.com",
-      "homepage": "http://www.cedaro.com/"
+      "homepage": "https://www.cedaro.com/"
     }
   ],
   "support": {
@@ -22,5 +22,13 @@
   },
   "require": {
     "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*@stable"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cedaro\\WooCommerce\\CouponLinks\\Test\\": "tests/phpunit/"
+    }
   }
 }
