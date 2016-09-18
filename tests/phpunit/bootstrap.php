@@ -30,9 +30,9 @@ class Cedaro_WP_Plugin_Tests_Bootstrap {
 	public function locate_wordpress_tests() {
 		$directories = [
 			getenv( 'WP_TESTS_DIR' ),
-			getenv( 'WP_DEVELOP_DIR' ),
-			'../../../../../tests/phpunit/includes/bootstrap.php',
-			'/tmp/wordpress-tests-lib/includes/bootstrap.php',
+			getenv( 'WP_DEVELOP_DIR' ) . 'tests/phpunit',
+			'../../../../../tests/phpunit',
+			'/tmp/wordpress-tests-lib',
 		];
 
 		foreach ( $directories as $directory ) {
