@@ -32,6 +32,11 @@ function cedaro_woocommerce_coupon_links() {
 		return;
 	}
 
+	// Don't attempt to apply coupon in AJAX requests.
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+		return;
+	}
+
 	/**
 	 * Filter the coupon code query variable name.
 	 *
