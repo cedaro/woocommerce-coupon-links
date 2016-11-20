@@ -5,19 +5,19 @@
  * @package   WooCommerceCouponLinks
  * @author    Luke McDonald
  * @author    Brady Vercher
- * @link      http://www.cedaro.com/
+ * @link      https://www.cedaro.com/
  * @copyright Copyright (c) 2015 Cedaro, Inc.
  * @license   GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name: WooCommerce Coupon Links
- * Plugin URI: https://github.com/cedaro/woocommerce-coupon-links
- * Description: Automatically apply a WooCommerce coupon code to the cart with a url.
- * Version: 2.0.3
- * Author: Cedaro
- * Author URI: http://www.cedaro.com/
- * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name:       WooCommerce Coupon Links
+ * Plugin URI:        https://github.com/cedaro/woocommerce-coupon-links
+ * Description:       Automatically apply a WooCommerce coupon code to the cart from the URL.
+ * Version:           2.0.3
+ * Author:            Cedaro
+ * Author URI:        https://www.cedaro.com/
+ * License:           GPL-2.0+
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * GitHub Plugin URI: cedaro/woocommerce-coupon-links
  */
 
