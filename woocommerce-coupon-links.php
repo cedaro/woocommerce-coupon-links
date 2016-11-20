@@ -62,3 +62,33 @@ function cedaro_woocommerce_coupon_links() {
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
 add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
+
+/**
+ * Remove the coupon code query string parameter in the URL.
+ *
+ * @since 2.1.0
+ */
+function cedaro_woocommerce_coupon_links_update_url() {
+	$query_var = apply_filters( 'woocommerce_coupon_links_query_var', 'coupon_code' );
+
+	if ( ! isset( $_GET[ $query_var ] ) ) {
+		return;
+	}
+	?>
+	<script>
+	(function() {
+		var queryVar = '<?php echo esc_js( $query_var ); ?>',
+			removePattern = new RegExp( '([?&])' + queryVar + '=[^&#]*' );
+
+		if ( window.history.replaceState ) {
+			window.history.replaceState(
+				null,
+				null,
+				window.location.href.replace( removePattern, '$1' ).replace( /[?&](#|$)/, '$1' )
+			);
+		}
+	})();
+	</script>
+	<?php
+}
+add_action( 'wp_head', 'cedaro_woocommerce_coupon_links_update_url' );
