@@ -1,4 +1,5 @@
 /bin export-ignore
+/dist export-ignore
 /tests export-ignore
 /vendor export-ignore
 .editorconfig export-ignore
