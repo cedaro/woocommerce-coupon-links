@@ -1,4 +1,4 @@
-# WooCommerce Coupon Links
+# WooCommerce Coupon Links [![Build Status](https://travis-ci.org/cedaro/woocommerce-coupon-links.svg?branch=develop)](https://travis-ci.org/cedaro/woocommerce-coupon-links)
 
 Automatically apply WooCommerce coupon codes to the cart via a URL.
 
