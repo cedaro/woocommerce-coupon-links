@@ -97,3 +97,35 @@ function cedaro_woocommerce_coupon_links_update_url() {
 	<?php
 }
 add_action( 'wp_head', 'cedaro_woocommerce_coupon_links_update_url' );
+
+/**
+ * Remove the coupon code query string parameter from the WooCommerce AJAX
+ * endpoint.
+ *
+ * WooCommerce includes a custom AJAX endpoint, which is basically just the
+ * current URL with a 'wc-ajax' query parameter appended. In some cases the
+ * value of that parameter includes an '%%endpoint%%' token, which gets replaced
+ * in JavaScript with the AJAX handler.
+ *
+ * When filtering the endpoint to remove query arguments, the call to
+ * remove_query_arg() ends up URL encoding argument values, which changes
+ * the '%%endpoint%% token, causing AJAX requests to fail.
+ *
+ * This replaces the '%%endpoint%%' token with a temporary token that won't
+ * be URL encoded, then swaps the tokens after calling remove_query_arg().
+ *
+ * @see WC_AJAX::get_endpoint()
+ *
+ * @since 2.2.0
+ *
+ * @param  string $endpoint AJAX endpoint URL.
+ * @return string
+ */
+function cedaro_woocommerce_coupon_links_ajax_endpoint( $endpoint ) {
+	$query_var = apply_filters( 'woocommerce_coupon_links_query_var', 'coupon_code' );
+	$token = 'cedaro-woocommerce-coupon-links-url-safe-token';
+	$endpoint = str_replace( '%%endpoint%%', $token, $endpoint );
+	$endpoint = remove_query_arg( $query_var, $endpoint );
+	return str_replace( $token, '%%endpoint%%', $endpoint );
+}
+add_filter( 'woocommerce_ajax_get_endpoint', 'cedaro_woocommerce_coupon_links_ajax_endpoint' );
