@@ -21,6 +21,11 @@
  * GitHub Plugin URI: cedaro/woocommerce-coupon-links
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Automatically apply a coupon passed via URL to the cart.
  *
