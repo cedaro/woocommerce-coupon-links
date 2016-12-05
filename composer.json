@@ -1,7 +1,7 @@
 {
   "name": "cedaro/woocommerce-coupon-links",
   "description": "A WordPress plugin to automatically apply a WooCommerce coupon code to the cart with a URL.",
-  "keywords": ["wordpress"],
+  "keywords": [ "wordpress" ],
   "type": "wordpress-plugin",
   "homepage": "https://github.com/cedaro/woocommerce-coupon-links",
   "license": "GPL-2.0+",
