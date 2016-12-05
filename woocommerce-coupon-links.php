@@ -66,7 +66,7 @@ function cedaro_woocommerce_coupon_links() {
 	}
 }
 add_action( 'wp_loaded', 'cedaro_woocommerce_coupon_links', 30 );
-add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links' );
+add_action( 'woocommerce_add_to_cart', 'cedaro_woocommerce_coupon_links', 30 );
 
 /**
  * Remove the coupon code query string parameter in the URL.
