@@ -83,14 +83,23 @@ function cedaro_woocommerce_coupon_links_update_url() {
 	<script>
 	(function() {
 		var queryVar = '<?php echo esc_js( $query_var ); ?>',
-			removePattern = new RegExp( '([?&])' + queryVar + '=[^&#]*' );
+			queryParams = window.location.search.substr( 1 ).split( '&' ),
+			url = window.location.href.split( '?' ).shift();
+
+		for ( var i = queryParams.length; i-- > 0; ) {
+			if ( 0 === queryParams[ i ].indexOf( queryVar + '=' ) ) {
+				queryParams.splice( i, 1 );
+			}
+		}
+
+		if ( queryParams.length > 0 ) {
+			url += '?' + queryParams.join( '&' );
+		}
+
+		url += window.location.hash;
 
 		if ( window.history.replaceState ) {
-			window.history.replaceState(
-				null,
-				null,
-				window.location.href.replace( removePattern, '$1' ).replace( /[?&](#|$)/, '$1' )
-			);
+			window.history.replaceState( null, null, url );
 		}
 	})();
 	</script>
