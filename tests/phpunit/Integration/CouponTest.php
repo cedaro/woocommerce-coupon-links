@@ -29,7 +29,7 @@ class CouponTest extends \WP_UnitTestCase {
 		$product = WC_Helper_Product::create_simple_product();
 		$this->go_to( home_url( '/?coupon_code=dummycoupon' ) );
 
-		WC()->cart->add_to_cart( $product->id, 1 );
+		WC()->cart->add_to_cart( $product->get_id(), 1 );
 		cedaro_woocommerce_coupon_links();
 
 		$this->assertTrue( WC()->cart->has_discount( 'dummycoupon' ) );
@@ -40,7 +40,7 @@ class CouponTest extends \WP_UnitTestCase {
 		$this->go_to( home_url( '/?coupon_code=dummycoupon' ) );
 
 		cedaro_woocommerce_coupon_links();
-		WC()->cart->add_to_cart( $product->id, 1 );
+		WC()->cart->add_to_cart( $product->get_id(), 1 );
 
 		$this->assertTrue( WC()->cart->has_discount( 'dummycoupon' ) );
 	}
