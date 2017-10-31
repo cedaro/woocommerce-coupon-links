@@ -39,11 +39,5 @@
     "installer-paths": {
       "vendor/woocommerce/{$name}": [ "woocommerce/woocommerce" ]
     }
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/woothemes/woocommerce"
-    }
-  ]
+  }
 }
