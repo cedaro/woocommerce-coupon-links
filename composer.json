@@ -24,8 +24,7 @@
     "composer/installers": "^1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.7",
-    "woocommerce/woocommerce": "dev-master#5e3a568623afb02fb4f2b0ee1ceecee9e9bc8bc4"
+    "phpunit/phpunit": "^5.7"
   },
   "autoload-dev": {
     "classmap": [
@@ -35,9 +34,9 @@
       "Cedaro\\WooCommerce\\CouponLinks\\Test\\": "tests/phpunit/"
     }
   },
-  "extra": {
-    "installer-paths": {
-      "vendor/woocommerce/{$name}": [ "woocommerce/woocommerce" ]
-    }
+  "scripts": {
+    "install-woocommerce": "bin/install-woocommerce.sh 3.2.2",
+    "pre-install-cmd": "@install-woocommerce",
+    "pre-update-cmd": "@install-woocommerce"
   }
 }
