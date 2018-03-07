@@ -7,7 +7,7 @@
  * @author    Brady Vercher
  * @link      https://www.cedaro.com/
  * @copyright Copyright (c) 2015 Cedaro, Inc.
- * @license   GPL-2.0+
+ * @license   GPL-2.0-or-later
  *
  * @wordpress-plugin
  * Plugin Name:          WooCommerce Coupon Links
@@ -16,7 +16,7 @@
  * Version:              2.2.0
  * Author:               Cedaro
  * Author URI:           https://www.cedaro.com/
- * License:              GPL-2.0+
+ * License:              GPL-2.0-or-later
  * License URI:          https://www.gnu.org/licenses/gpl-2.0.html
  * GitHub Plugin URI:    cedaro/woocommerce-coupon-links
  * WC requires at least: 3.0
