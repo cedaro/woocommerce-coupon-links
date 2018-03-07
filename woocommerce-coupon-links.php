@@ -20,7 +20,7 @@
  * License URI:          https://www.gnu.org/licenses/gpl-2.0.html
  * GitHub Plugin URI:    cedaro/woocommerce-coupon-links
  * WC requires at least: 3.0
- * WC tested up to:      3.2
+ * WC tested up to:      3.3
  */
 
 // Exit if accessed directly.
