@@ -35,6 +35,12 @@
       "Cedaro\\WooCommerce\\CouponLinks\\Test\\": "tests/phpunit/"
     }
   },
+  "config": {
+    "preferred-install": {
+      "woocommerce/woocommerce": "source",
+      "*": "dist"
+    }
+  },
   "extra": {
     "installer-paths": {
       "vendor/{$vendor}/{$name}": [
