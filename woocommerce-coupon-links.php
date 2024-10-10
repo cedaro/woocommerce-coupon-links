@@ -13,14 +13,14 @@
  * Plugin Name:          WooCommerce Coupon Links
  * Plugin URI:           https://github.com/cedaro/woocommerce-coupon-links
  * Description:          Apply WooCommerce coupons from the URL.
- * Version:              2.2.0
+ * Version:              2.2.1
  * Author:               Cedaro
  * Author URI:           https://www.cedaro.com/
  * License:              GPL-2.0-or-later
  * License URI:          https://www.gnu.org/licenses/gpl-2.0.html
  * GitHub Plugin URI:    cedaro/woocommerce-coupon-links
  * WC requires at least: 3.0
- * WC tested up to:      3.3
+ * WC tested up to:      9.3
  */
 
 // Exit if accessed directly.
